@@ -1,0 +1,88 @@
+voclabs:~/caso1/todo-list-aws (develop) $ sam deploy template.yaml --config-env default
+Uploading to todo-list-aws/234195de3c8e7fe3de0d98d37d976059  461249 / 461249  (100.00%)
+File with same data already exists at todo-list-aws/234195de3c8e7fe3de0d98d37d976059, skipping upload
+File with same data already exists at todo-list-aws/234195de3c8e7fe3de0d98d37d976059, skipping upload
+File with same data already exists at todo-list-aws/234195de3c8e7fe3de0d98d37d976059, skipping upload
+File with same data already exists at todo-list-aws/234195de3c8e7fe3de0d98d37d976059, skipping upload
+
+        Deploying with following values
+        ===============================
+        Stack name                   : todo-list-aws
+        Region                       : us-east-1
+        Confirm changeset            : False
+        Deployment s3 bucket         : aws-sam-cli-managed-default-samclisourcebucket-jvillar
+        Capabilities                 : ["CAPABILITY_IAM"]
+        Parameter overrides          : {"Stage": "default"}
+        Signing Profiles             : {}
+
+Initiating deployment
+=====================
+Uploading to todo-list-aws/83fac51567a8c963801fc3f280b37cc0.template  4285 / 4285  (100.00%)
+
+Waiting for changeset to be created..
+
+CloudFormation stack changeset
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Operation                                        LogicalResourceId                                ResourceType                                     Replacement                                    
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+* Modify                                         CreateTodoFunction                               AWS::Lambda::Function                            False                                          
+* Modify                                         DeleteTodoFunction                               AWS::Lambda::Function                            False                                          
+* Modify                                         GetTodoFunction                                  AWS::Lambda::Function                            False                                          
+* Modify                                         ListTodosFunction                                AWS::Lambda::Function                            False                                          
+* Modify                                         ServerlessRestApi                                AWS::ApiGateway::RestApi                         False                                          
+* Modify                                         UpdateTodoFunction                               AWS::Lambda::Function                            False                                          
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Changeset created successfully. arn:aws:cloudformation:us-east-1:600566937225:changeSet/samcli-deploy1654334020/9ca26d03-c569-4171-a732-438868a35aaf
+
+
+2022-06-04 09:13:56 - Waiting for stack create/update to complete
+
+CloudFormation events from changeset
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ResourceStatus                                   ResourceType                                     LogicalResourceId                                ResourceStatusReason                           
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UPDATE_IN_PROGRESS                               AWS::Lambda::Function                            DeleteTodoFunction                               -                                              
+UPDATE_IN_PROGRESS                               AWS::Lambda::Function                            ListTodosFunction                                -                                              
+UPDATE_IN_PROGRESS                               AWS::Lambda::Function                            UpdateTodoFunction                               -                                              
+UPDATE_IN_PROGRESS                               AWS::Lambda::Function                            GetTodoFunction                                  -                                              
+UPDATE_IN_PROGRESS                               AWS::Lambda::Function                            CreateTodoFunction                               -                                              
+UPDATE_COMPLETE                                  AWS::Lambda::Function                            DeleteTodoFunction                               -                                              
+UPDATE_COMPLETE                                  AWS::Lambda::Function                            UpdateTodoFunction                               -                                              
+UPDATE_COMPLETE                                  AWS::Lambda::Function                            ListTodosFunction                                -                                              
+UPDATE_COMPLETE                                  AWS::Lambda::Function                            CreateTodoFunction                               -                                              
+UPDATE_COMPLETE                                  AWS::Lambda::Function                            GetTodoFunction                                  -                                              
+UPDATE_COMPLETE_CLEANUP_IN_PROGRESS              AWS::CloudFormation::Stack                       todo-list-aws                                    -                                              
+UPDATE_COMPLETE                                  AWS::CloudFormation::Stack                       todo-list-aws                                    -                                              
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+CloudFormation outputs from deployed stack
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Outputs                                                                                                                                                                                         
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Key                 BaseUrlApi                                                                                                                                                                  
+Description         Base URL of API                                                                                                                                                             
+Value               https://p19dinr75k.execute-api.us-east-1.amazonaws.com/Prod                                                                                                                 
+
+Key                 DeleteTodoApi                                                                                                                                                               
+Description         API Gateway endpoint URL for ${opt:stage} stage for Delete TODO                                                                                                             
+Value               https://p19dinr75k.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}                                                                                                      
+
+Key                 ListTodosApi                                                                                                                                                                
+Description         API Gateway endpoint URL for ${opt:stage} stage for List TODO                                                                                                               
+Value               https://p19dinr75k.execute-api.us-east-1.amazonaws.com/Prod/todos                                                                                                           
+
+Key                 UpdateTodoApi                                                                                                                                                               
+Description         API Gateway endpoint URL for ${opt:stage} stage for Update TODO                                                                                                             
+Value               https://p19dinr75k.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}                                                                                                      
+
+Key                 GetTodoApi                                                                                                                                                                  
+Description         API Gateway endpoint URL for ${opt:stage} stage for Get TODO                                                                                                                
+Value               https://p19dinr75k.execute-api.us-east-1.amazonaws.com/Prod/todos/{id}                                                                                                      
+
+Key                 CreateTodoApi                                                                                                                                                               
+Description         API Gateway endpoint URL for ${opt:stage} stage for Create TODO                                                                                                             
+Value               https://p19dinr75k.execute-api.us-east-1.amazonaws.com/Prod/todos/                                                                                                          
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Successfully created/updated stack - todo-list-aws in us-east-1
